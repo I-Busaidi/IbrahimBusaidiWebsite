@@ -11,6 +11,7 @@
     <PackageReference Include="AutoMapper" Version="16.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.1">
@@ -24,11 +25,44 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\DbContexts\" />
-    <Folder Include="Data\BusaidiAirlines\" />
-    <Folder Include="Data\BusaidiEntertainments\" />
-    <Folder Include="Data\BusaidiStores\" />
-    <Folder Include="Data\GingyCookies\" />
+    <Folder Include="Data\BusaidiAirlines\Models\" />
+    <Folder Include="Data\BusaidiAirlines\DTOs\" />
+    <Folder Include="Data\BusaidiAirlines\Controllers\" />
+    <Folder Include="Data\BusaidiAirlines\Enums\" />
+    <Folder Include="Data\BusaidiAirlines\Mapping\" />
+    <Folder Include="Data\BusaidiAirlines\Services\" />
+    <Folder Include="Data\BusaidiAirlines\Repositories\" />
+    <Folder Include="Data\BusaidiEntertainments\Controllers\" />
+    <Folder Include="Data\BusaidiEntertainments\DTOs\" />
+    <Folder Include="Data\BusaidiEntertainments\Enums\" />
+    <Folder Include="Data\BusaidiEntertainments\Mapping\" />
+    <Folder Include="Data\BusaidiEntertainments\Models\" />
+    <Folder Include="Data\BusaidiEntertainments\Repositories\" />
+    <Folder Include="Data\BusaidiEntertainments\Services\" />
+    <Folder Include="Data\BusaidiStores\Controllers\" />
+    <Folder Include="Data\BusaidiStores\DTOs\" />
+    <Folder Include="Data\BusaidiStores\Enums\" />
+    <Folder Include="Data\BusaidiStores\Mapping\" />
+    <Folder Include="Data\BusaidiStores\Models\" />
+    <Folder Include="Data\BusaidiStores\Repositories\" />
+    <Folder Include="Data\BusaidiStores\Services\" />
+    <Folder Include="Data\GingyCookies\Controllers\" />
+    <Folder Include="Data\GingyCookies\DTOs\" />
+    <Folder Include="Data\GingyCookies\Enums\" />
+    <Folder Include="Data\GingyCookies\Mapping\" />
+    <Folder Include="Data\GingyCookies\Models\" />
+    <Folder Include="Data\GingyCookies\Repositories\" />
+    <Folder Include="Data\GingyCookies\Services\" />
+    <Folder Include="Data\Shared\Controllers\" />
+    <Folder Include="Data\Shared\DTOs\" />
+    <Folder Include="Data\Shared\Mapping\" />
+    <Folder Include="Data\Shared\Services\" />
+    <Folder Include="Data\Users\Controllers\" />
+    <Folder Include="Data\Users\DTOs\" />
+    <Folder Include="Data\Users\Enums\" />
+    <Folder Include="Data\Users\Mapping\" />
+    <Folder Include="Data\Users\Repositories\" />
+    <Folder Include="Data\Users\Services\" />
   </ItemGroup>
 
 </Project>
