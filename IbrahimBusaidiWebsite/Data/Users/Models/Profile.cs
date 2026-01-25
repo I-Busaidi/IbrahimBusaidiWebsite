@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using IbrahimBusaidiWebsite.Data.Users.Enums;
 
 namespace IbrahimBusaidiWebsite.Data.Users.Models
 {
@@ -12,9 +13,12 @@ namespace IbrahimBusaidiWebsite.Data.Users.Models
         // one-to-one relation between User & UserProfile
         public User User { get; set; } = default!;
 
+        [StringLength(30, ErrorMessage = "Display name must not exceed 30 characters")]
         public string? DisplayName { get; set; }
         public DateTime? DateOfBirth { get; set; }
-        public string? PreferredLanguage { get; set; }
+        public UserEnums.PrefLanguage PreferredLanguage { get; set; }
+
+        [StringLength(30, ErrorMessage = "Nationality name must not exceed 30 characters")]
         public string? Nationality { get; set; }
         public string? TimeZone { get; set; }
     }
