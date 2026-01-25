@@ -59,7 +59,6 @@
     <Folder Include="Data\Shared\Services\" />
     <Folder Include="Data\Users\Controllers\" />
     <Folder Include="Data\Users\DTOs\" />
-    <Folder Include="Data\Users\Enums\" />
     <Folder Include="Data\Users\Mapping\" />
     <Folder Include="Data\Users\Repositories\" />
     <Folder Include="Data\Users\Services\" />
