@@ -15,6 +15,7 @@ namespace IbrahimBusaidiWebsite.Data.Users.Models
 
         [StringLength(30, ErrorMessage = "Display name must not exceed 30 characters")]
         public string? DisplayName { get; set; }
+        public string? ProfilePictureUrl { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public UserEnums.PrefLanguage PreferredLanguage { get; set; }
 
