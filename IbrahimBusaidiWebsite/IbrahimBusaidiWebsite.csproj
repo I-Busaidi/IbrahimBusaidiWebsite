@@ -62,6 +62,7 @@
     <Folder Include="Data\Users\Mapping\" />
     <Folder Include="Data\Users\Repositories\" />
     <Folder Include="Data\Users\Services\" />
+    <Folder Include="wwwroot\Images\Landing\" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,88 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@inject IJSRuntime JS
+
+<div class="landing" @ref="_root">
+    <!-- L4: innermost -->
+    <div class="layer layer4-stars"></div>
+
+    <!-- L3: static color tint -->
+    <div class="layer layer3-tint"></div>
+
+    <!-- L2: abstract shapes (parallax) -->
+    <div class="layer layer2-abstract" aria-hidden="true">
+        <div class="shape s1"></div>
+        <div class="shape s2"></div>
+        <div class="shape s3"></div>
+    </div>
+
+    <!-- L1: front UI (cards) -->
+    <div class="layer layer1-ui">
+        <div class="grid">
+            @foreach (var card in Cards)
+            {
+                <div class="card-wrap">
+                    
+                    <a class="card-link" href="@card.Url" aria-label="@card.Title">
+                        <div class="card">
+                            <div class="card-front">
+                                <img src="@card.Image" alt="" />
+                                <div class="card-front-text">
+                                    <h3>@card.Title</h3>
+                                    <p>@card.Subtitle</p>
+                                </div>
+                            </div>
+
+                            <div class="card-deep">
+                                <div class="card-deep-text">
+                                    <h3>@card.HoverTitle</h3>
+                                    <p>@card.HoverSubtitle</p>
+                                    <span class="cta">Open →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private ElementReference _root;
+    private IJSObjectReference? _module;
+    private bool _started;
+
+    private readonly List<CardVm> Cards = new()
+    {
+        new("Card One", "Front content", "Explore", "This is revealed from layer 4", "/explore", "/Images/Cards/c1.png"),
+        new("Card Two", "Front content", "Details", "Different deep content", "/details", "/Images/Cards/c2.png"),
+        new("Card Three", "Front content", "Gallery", "Click to open", "/gallery", "/Images/Cards/c3.png"),
+    };
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (_started) return;
+
+        _module = await JS.InvokeAsync<IJSObjectReference>(
+            "import", "/js/landing-fx.module.js");
+
+        await _module.InvokeVoidAsync(
+            "init",
+            _root,
+            new { r2 = 320, r3 = 200, r4 = 110, ease = 0.12 }
+        );
+
+        _started = true;
+    }
+
+    private record CardVm(
+        string Title,
+        string Subtitle,
+        string HoverTitle,
+        string HoverSubtitle,
+        string Url,
+        string Image);
+}
+
+
