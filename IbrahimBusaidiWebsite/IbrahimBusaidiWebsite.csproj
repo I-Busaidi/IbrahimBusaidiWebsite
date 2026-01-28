@@ -25,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\BusaidiAirlines\Models\" />
     <Folder Include="Data\BusaidiAirlines\DTOs\" />
     <Folder Include="Data\BusaidiAirlines\Controllers\" />
     <Folder Include="Data\BusaidiAirlines\Enums\" />
